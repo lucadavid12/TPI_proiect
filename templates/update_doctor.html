@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+<h1>{% block title %}Editeaza{% endblock %}</h1>
+
+{% block content %}
+<!-- Update Form -->
+<div class="mb-10"></div>
+<div class="bg-black text-white w-full mx-auto max-w-lg border rounded-lg">
+  <form action="/{{url}}/update/{{doctor.iddoctor}}" method="POST"
+    class="bg-transparent flex gap-5 flex-col shadow-md rounded px-8 py-8 mb-0">
+
+    <div>
+      <label class="block text-sm font-bold mb-1" for="nume_pacient">
+        Nume
+      </label>
+      <input name="nume_doctor" required value="{{doctor.nume_doctor}}"
+        class="flex w-full rounded-lg border bg-black px-3 py-2 text-sm outline-0 transition-colors duration-500 ease-out focus-visible:ring-1 focus-visible:ring-white"
+        id="nume_doctor" placeholder="Nume">
+    </div>
+
+    <div>
+      <label class="block text-sm font-bold mb-1" for="prenume_doctor">
+        Prenume
+      </label>
+      <input name="prenume_doctor" required value="{{doctor.prenume_doctor}}"
+        class="flex w-full rounded-lg border bg-black px-3 py-2 text-sm outline-0 transition-colors duration-500 ease-out focus-visible:ring-1 focus-visible:ring-white"
+        id="prenume_pacient" placeholder="Prenume">
+    </div>
+
+    <div>
+      <label class="block text-sm font-bold mb-1" for="specializare">
+         Specializare
+      </label>
+      <input name="specializare" required value="{{doctor.specializare}}"
+        class="flex w-full rounded-lg border bg-black px-3 py-2 text-sm outline-0 transition-colors duration-500 ease-out focus-visible:ring-1 focus-visible:ring-white"
+        id="specializare" placeholder="Specializare">
+    </div>
+
+
+    <div class="flex gap-2 items-center">
+      <button
+        class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
+        type="submit">
+        Editeaza Date
+      </button>
+      <a href='/{{url}}'
+        class="focus:outline-none text-base text-white bg-gray-800 hover:bg-gray-700 focus:ring-2 focus:ring-white font-medium rounded-lg py-2 px-4">
+        Cancel
+      </a>
+    </div>
+  </form>
+</div>
+{% endblock %}
