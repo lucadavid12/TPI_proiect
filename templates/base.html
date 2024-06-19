@@ -13,14 +13,13 @@
   <title>{% block title %}{% endblock %} - TPI</title>
 </head>
 
-<body class="bg-gray-900">
+<body class="bg-green-700">
   <main>
     <nav class="bg-green-500 p-4 font-semibold">
       <div class="container mx-auto flex justify-between items-center">
         <a href="/" class="text-black text-lg font-bold">CRUD App</a>
 
         <div class="space-x-10 text-xl">
-          <a href="{{ url_for('pacienti.pacienti') }}" class="hover:text-white text-black">Pacienti</a>
           <a href="{{ url_for('programare.programare') }}" class="hover:text-white text-black">Programare</a>
           <a href="{{ url_for('doctori.doctori') }}" class="hover:text-white text-black">Doctori</a>
         </div>
