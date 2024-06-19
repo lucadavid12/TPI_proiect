@@ -1,6 +1,4 @@
-
-def timeslots():
-    ore = [
+ore = [
         {
             "label":"9:00", "value":"9:00"
         },
@@ -27,7 +25,7 @@ def timeslots():
         },
         {
             "label": "17:00", "value": "17:00"
-        },
+        }
     ]
-
+def timeslots():
     return ore

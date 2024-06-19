@@ -10,21 +10,21 @@
     <form action="/creare_programare/" method="POST" class="bg-transparent flex gap-5 flex-col shadow-md rounded px-8 py-8 mb-0">
       <h1 class="text-xl font-bold">Programare noua</h1>
       <div>
-        <label class="block text-sm font-bold mb-1" for="nume_pacient">
+        <label class="block text-sm font-bold mb-1" for="nume">
           Nume
         </label>
-        <input name="nume_pacient" required
+        <input name="nume" required
           class="flex w-full rounded-lg border bg-black px-3 py-2 text-sm outline-0 transition-colors duration-500 ease-out focus-visible:ring-1 focus-visible:ring-white"
-          id="nume_pacient" placeholder="Nume">
+          id="nume" placeholder="Nume">
       </div>
 
       <div>
-        <label class="block text-sm font-bold mb-1" for="prenume_pacient">
+        <label class="block text-sm font-bold mb-1" for="prenume">
           Prenume
         </label>
-        <input name="prenume_pacient" required
+        <input name="prenume" required
           class="flex w-full rounded-lg border bg-black px-3 py-2 text-sm outline-0 transition-colors duration-500 ease-out focus-visible:ring-1 focus-visible:ring-white"
-          id="prenume_pacient" placeholder="Prenume">
+          id="prenume" placeholder="Prenume">
       </div>
 
       <div>
@@ -56,15 +56,15 @@
        <div class="relative max-w-sm">
   <input type="date"
          class="bg-black border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-black dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-         required id="data" placeholder="Select date">
+         required id="data" placeholder="Selecteaza data">
 </div>
        </div>
 
       <div>
-        <label class="block text-sm font-bold mb-1" for="Serviciu">
+        <label class="block text-sm font-bold mb-1" for="iddoctor">
           Doctori Disponibili
         </label>
-        <select id="doctor" name="doctor"
+        <select id="iddoctor" name="iddoctor"
           class="bg-black text-white border border-gray-300 text-sm rounded-lg focus:border-white block w-full p-2.5">
           {% for option in options["optiuni_doctori"] %}
           <option value="{{ option.id }}">{{ option.label }}</option>
@@ -73,18 +73,17 @@
       </div>
 
     <div>
-        <label class="block text-sm font-bold mb-1" for="Ore">
+        <label class="block text-sm font-bold mb-1" for="ora_start">
           Ore Disponibile
         </label>
-        <select id="doctor" name="doctor"
+        <select id="ora_start" name="ora_start"
           class="bg-black text-white border border-gray-300 text-sm rounded-lg focus:border-white block w-full p-2.5">
-          {% for option in options["optiuni_doctori"] %}
-          <option value="{{ option.id }}">{{ option.label }}</option>
+          {% for timeslot in timeslots %}
+          <option value="{{ timeslot.value }}">{{ timeslot.label }}</option>
           {% endfor %}
         </select>
       </div>
 
-{#    AFISARE DE INTERVALE DISPONIBILE AICI CARE SA FIE SELECTAT#}
       <button
         class="w-half mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
         type="submit">
